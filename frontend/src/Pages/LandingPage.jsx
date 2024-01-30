@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import NavBar from '../Components/NavBar';
+import ProfileSection from '../Components/ProfileSection'; 
 
 
 function LandingPage() {
@@ -10,8 +11,8 @@ function LandingPage() {
             <NavBar/>
 
             <div className="LandingPContainer">
-                {/* Nav/Top section */}
-
+                {/*Profile Part starts here*/}
+                <ProfileSection /> 
             </div>
         </>
     )
