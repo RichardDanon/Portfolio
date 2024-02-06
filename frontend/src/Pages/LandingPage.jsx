@@ -2,6 +2,7 @@ import React from 'react';
 import NavBar from '../Components/NavBar';
 import ProfileSection from '../Components/ProfileSection';
 import AboutMeSection from '../Components/AboutMeSection';
+import ContactPage from '../Components/ContactPage';
 
 
 function LandingPage() {
@@ -22,6 +23,14 @@ function LandingPage() {
 
                 {/* About Me Section */}
                 <AboutMeSection />
+
+                {/* Contact Section */}
+                <div id="contact" style={{ textAlign: 'center', margin: '50px 0' }}>
+                {/* Add margin to create space */}
+                    <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '10px' }}>Contact me</h2>
+                </div>
+                <ContactPage />
+
             </div>
         </>
     );
