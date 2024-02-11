@@ -1,8 +1,8 @@
 import React from 'react';
 import profileImage from '../Images/picture.jpg';
-import { FaDownload } from 'react-icons/fa'; // Import the download icon
 
 function ProfileSection() {
+
   return (
     <section className="flex flex-wrap justify-center items-center py-16 bg-white">
       <div className="flex flex-col sm:flex-row justify-center items-center">
@@ -26,8 +26,8 @@ function ProfileSection() {
           <div className="mt-8 flex items-center justify-center sm:justify-start">
             <a href="#projects" className="px-4 py-2 mr-4 border-2 border-black bg-black text-white text-lg no-underline inline-block">Projects</a>
             {/* CV Download Button */}
-            <a href="../Document/Resume English.pdf" download="Resume English.pdf" className="flex items-center px-4 py-2 border-2 border-black bg-white text-black text-lg no-underline inline-block">
-              Download CV <FaDownload className="ml-2" />
+            <a href="../Document/Resume English.pdf" download="Richard Resume English.pdf" className="flex items-center px-4 py-2 border-2 border-black bg-white text-black text-lg no-underline inline-block">
+              Download CV
             </a>
           </div>
         </div>
