@@ -1,5 +1,7 @@
 import React from 'react';
 import profileImage from '../Images/picture.jpg';
+import resumePDF from '../Documents/Resume English.pdf';
+
 
 function ProfileSection() {
 
@@ -26,7 +28,7 @@ function ProfileSection() {
           <div className="mt-8 flex items-center justify-center sm:justify-start">
             <a href="#projects" className="px-4 py-2 mr-4 border-2 border-black bg-black text-white text-lg no-underline inline-block">Projects</a>
             {/* CV Download Button */}
-            <a href="../Document/Resume English.pdf" download="Richard Resume English.pdf" className="flex items-center px-4 py-2 border-2 border-black bg-white text-black text-lg no-underline inline-block">
+            <a href={resumePDF} download="Resume English.pdf" className="flex items-center px-4 py-2 border-2 border-black bg-white text-black text-lg no-underline inline-block">
               Download CV
             </a>
           </div>

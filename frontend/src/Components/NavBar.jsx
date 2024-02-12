@@ -25,8 +25,8 @@ function NavBar() {
           <a href="#projects" className="text-black no-underline">
             Projects ▼
           </a>
-          <a href="#qualification" className="text-black no-underline">
-            Qualification
+          <a href="#skills" className="text-black no-underline">
+            Skills
           </a>
           <a href="#experiences" className="text-black no-underline">
             Experiences ▼
@@ -84,19 +84,19 @@ function NavBar() {
             href="#projects"
             className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100"
           >
-            Projects ▼
+            Projects
           </a>
           <a
-            href="#qualification"
+            href="#skills"
             className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100"
           >
-            Qualification
+            Skills
           </a>
           <a
             href="#experiences"
             className="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-100"
           >
-            Experiences ▼
+            Experiences
           </a>
           {/* Contact Button - Show this as a simple link on smaller screens */}
           <a

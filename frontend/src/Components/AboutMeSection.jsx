@@ -1,6 +1,26 @@
 import React, { useState, useEffect } from 'react';
-import { Carousel } from 'react-responsive-3d-carousel';
+import Carousel from 'react-multi-carousel';
+import 'react-multi-carousel/lib/styles.css';
 import ballImage from '../Images/ball.jpg';
+
+const responsive = {
+  superLargeDesktop: {
+    breakpoint: { max: 4000, min: 1024 },
+    items: 1
+  },
+  desktop: {
+    breakpoint: { max: 1024, min: 768 },
+    items: 1
+  },
+  tablet: {
+    breakpoint: { max: 768, min: 464 },
+    items: 1
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1
+  }
+};
 
 const AboutMeSection = () => {
   const [isMobile, setIsMobile] = useState(false);
@@ -19,7 +39,7 @@ const AboutMeSection = () => {
   const carouselItems = [
     {
       id: 1,
-      text: "Passionate about creating seamless and engaging user experiences, I specialize in UX/UI design with a keen focus on intuitive interfaces. With over 5 years of experience in the industry, I have developed a deep understanding of user-centric design principles, working across diverse platforms.",
+      text: "Passionate about creating seamless and engaging user experiences...",
       title: "Hobbies",
       backgroundImg: ballImage,
     },
@@ -34,40 +54,33 @@ const AboutMeSection = () => {
       text: "Marketing is not only about selling but about telling a story that resonates with the audience. My approach combines strategic thinking with creative execution to deliver compelling narratives.",
       title: "Marketing",
       backgroundImg: 'path_to_image_3.jpg',
-    },
+    }
   ];
 
   return (
-    <div className="w-full md:w-80 mx-auto" style={{ width: '80%', margin: 'auto' }}>
+    <div className="w-full mx-auto" style={{ maxWidth: '60%' }}>
       <Carousel
-        slidesToShow={1}
-        infiniteLoop
-        autoPlay 
-        interval={5000} 
-        showArrows={!isMobile}
-        showStatus={isMobile}
-        showThumbs={!isMobile} // Enable thumbs for swipe navigation on mobile
-        statusFormatter={(current, total) => `${current} / ${total}`}
-        renderArrowPrev={(onClickHandler, hasPrev, label) =>
-          !isMobile && hasPrev && (
-            <button type="button" onClick={onClickHandler} title={label} className="absolute top-1/2 left-0 transform -translate-y-1/2 prev-arrow bg-white text-gray-800 px-3 py-2 rounded-full shadow-md z-10">
-              Prev
-            </button>
-          )
-        }
-        renderArrowNext={(onClickHandler, hasNext, label) =>
-          !isMobile && hasNext && (
-            <button type="button" onClick={onClickHandler} title={label} className="absolute top-1/2 right-0 transform -translate-y-1/2 next-arrow bg-white text-gray-800 px-3 py-2 rounded-full shadow-md z-10">
-              Next
-            </button>
-          )
-        }
+        swipeable={true}
+        draggable={true}
+        showDots={true}
+        responsive={responsive}
+        ssr={true}
+        infinite={true}
+        autoPlay={true}
+        autoPlaySpeed={5000}
+        keyBoardControl={true}
+        customTransition="all .5"
+        transitionDuration={500}
+        containerClass="carousel-container"
+        removeArrowOnDeviceType={["tablet", "mobile"]}
+        deviceType={isMobile ? "mobile" : "desktop"}
+        dotListClass="custom-dot-list-style"
+        itemClass="carousel-item-padding-40-px"
       >
-        {carouselItems.map(item => (
-          <div key={item.id} className="h-80 md:h-full relative">
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent"></div>
+        {carouselItems.map((item) => (
+          <div key={item.id} className="relative h-96 md:h-auto"> 
             <img src={item.backgroundImg} alt={item.title} className="object-cover w-full h-full" />
-            <div className="absolute bottom-0 left-0 w-full pb-6 px-6 text-white">
+            <div className="absolute bottom-0 left-0 w-full pb-6 px-6 text-white bg-gradient-to-t from-black via-transparent">
               <h2 className="text-xl md:text-2xl font-semibold">{item.title}</h2>
               <p className="text-sm md:text-base">{item.text}</p>
             </div>
