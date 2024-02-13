@@ -4,76 +4,97 @@ import ProfileSection from '../Components/ProfileSection';
 import AboutMeSection from '../Components/AboutMeSection';
 import ContactPage from '../Components/ContactPage';
 import SkillSection from '../Components/SkillSection';
-import ProjectSection from '../Components/ProjectSection'
-import ExperienceSection from '../Components/ExperienceSection'
-import TestimonialSection from '../Components/TestimonialSection'
-
+import ProjectSection from '../Components/ProjectSection';
+import ExperienceSection from '../Components/ExperienceSection';
+import TestimonialSection from '../Components/TestimonialSection';
 
 function LandingPage() {
+    // Function to smooth scroll to a section
+    const scrollToSection = (sectionId) => {
+        const section = document.getElementById(sectionId);
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+
     return (
         <>
-            {/* Navbar section */}
             <NavBar />
 
-            <div className="LandingPContainer" style={{ }}> {/* Add padding to create space */}
-                <section id="home">
-                {/* Profile Part starts here */}
-                <ProfileSection />
+            <div className="flex flex-col items-center">
+                <section id="home" className="w-full my-8">
+                    <ProfileSection />
+                    <div className="text-center mt-8">
+                        <button onClick={() => scrollToSection('about')} className="animate-bounce mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-500 hover:text-blue-700 transition duration-300 ease-in-out" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                    </div>
                 </section>
 
-                {/* Subtitle - adjust as necessary */}
-                <div style={{ textAlign: 'center', margin: '50px 0' }}> {/* Add margin to create space */}
-                    <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '10px' }}>More About Me</h2>
-                    <p style={{ fontSize: '1rem', color: '#666' }}>Discover more about my hobbies, experiences and personal insights</p>
-                </div>
-
-                <section id="about">
-                {/* About Me Section */}
+                <h2 id="about" className="text-center text-3xl md:text-4xl font-bold mb-2">More About Me</h2>
+                <p className="text-center text-sm md:text-base text-gray-600">Discover more about my hobbies, experiences, and personal insights</p>
+                <section  className="w-full my-8">
                     <AboutMeSection />
+                    <div className="text-center mt-8">
+                        <button onClick={() => scrollToSection('experiences')} className="animate-bounce mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-500 hover:text-blue-700 transition duration-300 ease-in-out" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                    </div>
                 </section>
-                
-                <div id="experiences" style={{ textAlign: 'center', margin: '50px 0' }}>
-                {/* Add margin to create space */}
-                    <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '10px' }}>Work Experience</h2>
-                </div>
 
-                <section id="experiences">
-                {/* About Me Section */}
+                <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '10px' }}>Experience Section</h2>
+                <section id="experiences" className="w-full my-8">
                     <ExperienceSection />
-                </section>
-
-                {/* Skills Section */}
-                <section id="skills" className='h-[75vh]'>
-                    <div style={{ textAlign: 'center', margin: '50px 0' }}>
-                        <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '10px' }}>Skill Section</h2>
+                    <div className="text-center mt-8">
+                        <button onClick={() => scrollToSection('skills')} className="animate-bounce mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-500 hover:text-blue-700 transition duration-300 ease-in-out" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
                     </div>
+                </section>
+                
+                <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '10px' }}>Skill Section</h2>
+                <section id="skills" className="w-full my-8">
                     <SkillSection />
+                    <div className="text-center mt-8">
+                        <button onClick={() => scrollToSection('projects')} className="animate-bounce mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-500 hover:text-blue-700 transition duration-300 ease-in-out" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                    </div>
                 </section>
 
-                {/* Project Section */}
-                <section id="projects" className='h-[100vh]'>
-                    <div  style={{ textAlign: 'center', margin: '50px 0' }}>
-                        <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '10px' }}>Project Section</h2>
-                    </div>
+                <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '10px' }}>Project Section</h2>
+                <section id="projects" className="w-full my-8">
                     <ProjectSection />
-                </section>
-                
-                
-                <section id="testimonials" className='h-[75vh]'>
-                    <div style={{ textAlign: 'center', margin: '50px 0' }}>
-                        <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '10px' }}>Testimonial Section</h2>
+                    <div className="text-center mt-8">
+                        <button onClick={() => scrollToSection('testimonials')} className="animate-bounce mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-500 hover:text-blue-700 transition duration-300 ease-in-out" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
                     </div>
-                    <TestimonialSection />
                 </section>
 
+                <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '10px' }}>Testimonial Section</h2>
+                <section id="testimonials" className="w-full my-8">
+                    <TestimonialSection />
+                    <div className="text-center mt-8">
+                        <button onClick={() => scrollToSection('contact')} className="animate-bounce mx-auto">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-blue-500 hover:text-blue-700 transition duration-300 ease-in-out" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                    </div>
+                </section>
 
-                {/* Contact Section */}
-                <section id="contact" className='h-[100vh]'>
-                    <div style={{ textAlign: 'center', margin: '50px 0' }}></div>
+                <section id="contact" className="w-full my-8">
                     <ContactPage />
                 </section>
-                
-
             </div>
         </>
     );

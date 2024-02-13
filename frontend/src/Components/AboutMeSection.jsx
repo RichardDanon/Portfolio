@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import ballImage from '../Images/ball.jpg';
+import Basketball from '../Images/BasketBall.jpg';
+import School from '../Images/School.jpg';
+import Space from '../Images/Space.jpg';
+
 
 const responsive = {
   superLargeDesktop: {
@@ -39,21 +42,21 @@ const AboutMeSection = () => {
   const carouselItems = [
     {
       id: 1,
-      text: "Passionate about creating seamless and engaging user experiences...",
-      title: "Hobbies",
-      backgroundImg: ballImage,
+      text: "I have been playing basketball since I was 10 years old. It has taught me the importance of teamwork, discipline, and perseverance.",
+      title: "Basketball",
+      backgroundImg: Basketball,
     },
     {
       id: 2,
-      text: "As a developer, I enjoy building things that make a difference. Engaging with code to create efficient and impactful applications is what drives me in my professional journey.",
-      title: "Professional",
-      backgroundImg: 'path_to_image_2.jpg', 
+      text: "I am curently studying Computer Science at Champlain College and plan to continue my studies in Software Engineering at ÉTS University. ",
+      title: "Future Plan",
+      backgroundImg: School, 
     },
     {
       id: 3,
-      text: "Marketing is not only about selling but about telling a story that resonates with the audience. My approach combines strategic thinking with creative execution to deliver compelling narratives.",
-      title: "Marketing",
-      backgroundImg: 'path_to_image_3.jpg',
+      text: "Passionate about space and the universe, I have always been fascinated by the stars and the mysteries of the cosmos. I would love to work in a technological field that is related to space.",
+      title: "Dreams",
+      backgroundImg: Space,
     }
   ];
 
@@ -78,11 +81,16 @@ const AboutMeSection = () => {
         itemClass="carousel-item-padding-40-px"
       >
         {carouselItems.map((item) => (
-          <div key={item.id} className="relative h-96 md:h-auto"> 
+          <div key={item.id} className="relative" style={{ height: '500px' }}> {/* Custom height for each item */}
             <img src={item.backgroundImg} alt={item.title} className="object-cover w-full h-full" />
-            <div className="absolute bottom-0 left-0 w-full pb-6 px-6 text-white bg-gradient-to-t from-black via-transparent">
-              <h2 className="text-xl md:text-2xl font-semibold">{item.title}</h2>
-              <p className="text-sm md:text-base">{item.text}</p>
+            {/* Gradient overlay */}
+            <div className={`absolute bottom-0 left-0 w-full ${isMobile ? 'h-2/5' : 'h-2/5'} bg-gradient-to-t from-black to-transparent`}>
+              <div className="flex h-full items-end pb-6 px-6">
+                <div>
+                  <h2 className="text-xl md:text-2xl font-semibold text-white">{item.title}</h2>
+                  <p className="text-sm md:text-base text-white">{item.text}</p>
+                </div>
+              </div>
             </div>
           </div>
         ))}
