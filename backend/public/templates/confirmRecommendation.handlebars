@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonial Approval</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .endorsement {
+            border-bottom: 1px solid #ddd;
+            padding: 20px 0;
+        }
+
+        .endorsement h2 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .endorsement p {
+            margin: 0;
+        }
+
+        .action-buttons {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .approve-btn,
+        .reject-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .approve-btn {
+            background-color: #4caf50;
+            color: #fff;
+        }
+
+        .reject-btn {
+            background-color: #f44336;
+            color: #fff;
+            margin-left: 10px;
+        }
+
+        .approve-btn:hover,
+        .reject-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Recommendation Approval</h1>
+
+    <div class="endorsement">
+        <h2>Name: {{name}}</h2>
+        <p>Email: {{email}}</p>
+        <p>Comment: {{comment}}</p>
+        <p>Date: {{date}}</p>
+    </div>
+
+    <div class="action-buttons">
+        <a class="approve-btn" href="{{approveLink}}">Approve</a>
+        <a class="reject-btn" href="{{rejectLink}}">Reject</a>
+    </div>
+</div>
+</body>
+</html>

@@ -23,7 +23,7 @@ function NavBar() {
             Testimonials
           </a>
           <a href="#projects" className="text-black no-underline">
-            Projects ▼
+            Projects
           </a>
           <a href="#skills" className="text-black no-underline">
             Skills

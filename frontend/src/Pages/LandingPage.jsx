@@ -6,6 +6,7 @@ import ContactPage from '../Components/ContactPage';
 import SkillSection from '../Components/SkillSection';
 import ProjectSection from '../Components/ProjectSection'
 import ExperienceSection from '../Components/ExperienceSection'
+import TestimonialSection from '../Components/TestimonialSection'
 
 
 function LandingPage() {
@@ -41,34 +42,34 @@ function LandingPage() {
                     <ExperienceSection />
                 </section>
 
-                <div id="skills" style={{ textAlign: 'center', margin: '50px 0' }}>
-                {/* Add margin to create space */}
-                    <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '10px' }}>Skill Section</h2>
-                </div>
-
-                <section id="skills">
                 {/* Skills Section */}
+                <section id="skills" className='h-[75vh]'>
+                    <div style={{ textAlign: 'center', margin: '50px 0' }}>
+                        <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '10px' }}>Skill Section</h2>
+                    </div>
                     <SkillSection />
                 </section>
 
-                <div id="skills" style={{ textAlign: 'center', margin: '50px 0' }}>
-                {/* Add margin to create space */}
-                    <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '10px' }}>Project Section</h2>
-                </div>
-
-                <section id="projects">
-                {/* Skills Section */}
+                {/* Project Section */}
+                <section id="projects" className='h-[100vh]'>
+                    <div  style={{ textAlign: 'center', margin: '50px 0' }}>
+                        <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '10px' }}>Project Section</h2>
+                    </div>
                     <ProjectSection />
                 </section>
+                
+                
+                <section id="testimonials" className='h-[75vh]'>
+                    <div style={{ textAlign: 'center', margin: '50px 0' }}>
+                        <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '10px' }}>Testimonial Section</h2>
+                    </div>
+                    <TestimonialSection />
+                </section>
+
 
                 {/* Contact Section */}
-                <div id="contact" style={{ textAlign: 'center', margin: '50px 0' }}>
-                {/* Add margin to create space */}
-                    <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '10px' }}>Contact Me</h2>
-                </div>
-
-                <section id="contact">
-                {/* Skills Section */}
+                <section id="contact" className='h-[100vh]'>
+                    <div style={{ textAlign: 'center', margin: '50px 0' }}></div>
                     <ContactPage />
                 </section>
                 
