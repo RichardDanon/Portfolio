@@ -7,6 +7,7 @@ import SkillSection from '../Components/SkillSection';
 import ProjectSection from '../Components/ProjectSection';
 import ExperienceSection from '../Components/ExperienceSection';
 import TestimonialSection from '../Components/TestimonialSection';
+import ScrollToTopBtn from '../Components/ScrollToTopBtn';
 
 function LandingPage() {
     // Function to smooth scroll to a section
@@ -96,6 +97,7 @@ function LandingPage() {
                     <ContactPage />
                 </section>
             </div>
+            <ScrollToTopBtn />
         </>
     );
 }
