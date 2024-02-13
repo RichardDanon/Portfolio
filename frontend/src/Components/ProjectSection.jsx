@@ -1,29 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import OfficeImage from '../Images/office.jpg'; // Make sure the path to your image is correct
+import OfficeImage from '../Images/office.jpg';
+import MovingExpress1 from '../Images/MovingExpress1.jpg';
+import MovingExpress2 from '../Images/MovingExpress2.jpg';
+import MovingExpress3 from '../Images/MovingExpress3.jpg';
+import MovingExpress4 from '../Images/MovingExpress4.jpg';
+import GameDev1 from '../Images/GameDev1.jpg';
+import GameDev2 from '../Images/GameDev2.jpg';
+import GameDev3 from '../Images/GameDev3.jpg';
+
+
+
+
+
 
 const projects = [
   {
-    name: "Altride",
-    description: "An all inclusive ride hailing application for all kinds of users...",
-    tags: ["React", "TailwindCSS", "Node.js"],
-    images: [OfficeImage, "/path/to/altride-image2.jpg"],
-    repoLink: "https://github.com/username/altride",
-  },
-  {
     name: "MovingExpress",
-    description: "Application for helping clients with their moves nationally and internationally (USA). Microservice-based API with Spring boot.",
-    tags: ["React", "Javascript", "MySQL", "MongoDB", "Spring boot", "Jira", "Auth0"],
-    images: ["/path/to/movingexpress-image1.jpg", "/path/to/movingexpress-image2.jpg"],
-    repoLink: "https://github.com/username/movingexpress",
+    description: "Application for helping clients with their moves nationally and internationally (USA). Monolithic API with Spring boot.",
+    tags: ["React", "Javascript", "MySQL", "MongoDB", "Spring boot", "Jira", "Auth0", "Docker", "CI/CD"],
+    images: [MovingExpress1, MovingExpress2, MovingExpress3, MovingExpress4],
+    repoLink: "https://github.com/nic5694/MovingExpress",
   },
   {
     name: "Mini Golf Game",
-    description: "An interactive mini-golf game for all ages...",
-    tags: ["Unity", "C#", "Photon"],
-    images: ["/path/to/minigolf-image1.jpg", "/path/to/minigolf-image2.jpg"],
-    repoLink: "https://github.com/username/minigolfgame",
+    description: "An interactive multiplayer mini-golf game for all ages. Developed using Unity and C#.",
+    tags: ["Unity", "C#", "Game Development", "Multiplayer",],
+    images: [GameDev1, GameDev2,GameDev3],
+    repoLink: "https://github.com/RichardDanon/Final_Game_Project",
   },
   // Add more projects as needed
 ];
@@ -124,9 +129,9 @@ const ProjectSection = () => {
           itemClass="carousel-item-padding-40-px"
         >
         {activeProjectData.images.map((image, index) => (
-        <div key={index} className="flex justify-center items-center h-96">
-            <img src={image} alt={`${activeProjectData.name} - ${index + 1}`} className="max-w-lg mx-auto h-full object-cover" />
-        </div>
+            <div key={index} className="flex justify-center items-center h-96 sm:h-[400px] md:h-[500px] lg:h-[600px]"> {/* Responsive heights for carousel items */}
+                <img src={image} alt={`${activeProjectData.name} - ${index + 1}`} className="max-w-full h-auto object-contain" />
+            </div>
         ))}
         </Carousel>
         <div className="mt-6">

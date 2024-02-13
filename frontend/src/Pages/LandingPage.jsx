@@ -44,8 +44,8 @@ function LandingPage() {
                     </div>
                 </section>
 
-                <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '10px' }}>Experience Section</h2>
-                <section id="experiences" className="w-full my-8">
+                <h2 id="experiences" style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '10px' }}>Experience Section</h2>
+                <section className="w-full my-8">
                     <ExperienceSection />
                     <div className="text-center mt-8">
                         <button onClick={() => scrollToSection('skills')} className="animate-bounce mx-auto">
@@ -56,8 +56,8 @@ function LandingPage() {
                     </div>
                 </section>
                 
-                <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '10px' }}>Skill Section</h2>
-                <section id="skills" className="w-full my-8">
+                <h2 id="skills" style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '10px' }}>Skill Section</h2>
+                <section className="w-full my-8">
                     <SkillSection />
                     <div className="text-center mt-8">
                         <button onClick={() => scrollToSection('projects')} className="animate-bounce mx-auto">
@@ -68,8 +68,8 @@ function LandingPage() {
                     </div>
                 </section>
 
-                <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '10px' }}>Project Section</h2>
-                <section id="projects" className="w-full my-8">
+                <h2 id="projects" style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '10px' }}>Project Section</h2>
+                <section className="w-full my-8">
                     <ProjectSection />
                     <div className="text-center mt-8">
                         <button onClick={() => scrollToSection('testimonials')} className="animate-bounce mx-auto">
@@ -80,8 +80,8 @@ function LandingPage() {
                     </div>
                 </section>
 
-                <h2 style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '10px' }}>Testimonial Section</h2>
-                <section id="testimonials" className="w-full my-8">
+                <h2 id="testimonials" style={{ fontSize: '2rem', fontWeight: 'bold', marginBottom: '10px' }}>Testimonial Section</h2>
+                <section className="w-full my-8">
                     <TestimonialSection />
                     <div className="text-center mt-8">
                         <button onClick={() => scrollToSection('contact')} className="animate-bounce mx-auto">

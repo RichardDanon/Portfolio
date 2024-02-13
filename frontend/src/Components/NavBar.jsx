@@ -29,7 +29,7 @@ function NavBar() {
             Skills
           </a>
           <a href="#experiences" className="text-black no-underline">
-            Experiences ▼
+            Experiences
           </a>
         </div>
       </div>
