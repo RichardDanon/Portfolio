@@ -1,50 +1,87 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function TestimonialContainer() {
     const [isLoadingNewTestimonials, setIsLoadingNewTestimonials] = useState(false);
     const [testimonials, setTestimonials] = useState([]);
     const [testimonialIndex, setTestimonialIndex] = useState(0);
+    const [formData, setFormData] = useState({ name: '', email: '', comment: '' });
+
+    // const fetchTestimonials = async () => {
+    //     setIsLoadingNewTestimonials(true);
+    //     try {
+    //         const response = await axios.get("http://localhost:8080/api/v1/services/endorsementService");
+    //         setTestimonials(response.data);
+    //         let indexRandom = Math.floor(Math.random() * response.data.length);
+    //         setTestimonialIndex(indexRandom);
+    //     } catch (error) {
+    //         toast.error("Failed to fetch testimonials");
+    //     }
+    //     setIsLoadingNewTestimonials(false);
+    // };
 
     const fetchTestimonials = async () => {
         setIsLoadingNewTestimonials(true);
         try {
-            const response = await axios.get("http://localhost:8080/api/v1/services/endorsementService");
+            const response = await axios.get("https://api-portfolio-l6j5.onrender.com");
             setTestimonials(response.data);
             let indexRandom = Math.floor(Math.random() * response.data.length);
-            setTestimonialIndex(indexRandom); // Start with the first testimonial
+            setTestimonialIndex(indexRandom);
         } catch (error) {
-            console.log(error);
+            // toast.error("Failed to fetch testimonials");
         }
         setIsLoadingNewTestimonials(false);
     };
 
-    async function handleSubmit(e) {
+    useEffect(() => {
+        fetchTestimonials();
+        const intervalId = setInterval(fetchTestimonials, 5000); 
+
+        return () => clearInterval(intervalId); 
+    }, []);
+    
+
+    const handleInputChange = (e) => {
+        setFormData({ ...formData, [e.target.id]: e.target.value });
+    };
+
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     const { name, email, comment } = formData;
+    //     if (!name || !email || !comment) {
+    //         toast.warn("Please fill in all fields.");
+    //         return;
+    //     }
+
+    //     try {
+    //         const response = await axios.post('http://localhost:8080/api/v1/services/endorsementService', formData);
+    //         toast.success("Testimonial submitted successfully!");
+    //         setFormData({ name: '', email: '', comment: '' }); 
+    //     } catch (error) {
+    //         toast.error("Failed to submit testimonial.");
+    //     }
+    // };
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
-
-        const name = document.getElementById('name').value
-        const email = document.getElementById('email').value
-        const comment = document.getElementById('message').value
-
-        if (comment && name && email) {
-            const response = await fetch('http://localhost:8080/api/v1/services/endorsementService', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    name: name,
-                    email: email,
-                    comment: comment,
-                }),
-            }).then((res) => {
-                console.log(res);
-            }).catch((error) => {
-                console.log(error);
-            });
+        const { name, email, comment } = formData;
+        if (!name || !email || !comment) {
+            toast.warn("Please fill in all fields.");
+            return;
         }
-        
-}
+
+        try {
+            const response = await axios.post('https://api-portfolio-l6j5.onrender.com', formData);
+            toast.success("Testimonial submitted successfully!");
+            setFormData({ name: '', email: '', comment: '' }); 
+        } catch (error) {
+            toast.error("Failed to submit testimonial.");
+        }
+    };
+
 
     const handleReload = () => {
         fetchTestimonials();
@@ -88,44 +125,39 @@ function TestimonialContainer() {
                 <div className="md:w-1/2 bg-gray-100 p-10">
                     <form onSubmit={handleSubmit} className="space-y-6">
                         <div>
-                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
-                                Full Name
-                            </label>
+                            <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">Full Name</label>
                             <input
                                 id="name"
                                 type="text"
                                 placeholder="Full Name"
                                 className="w-full p-4 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                                value={formData.name}
+                                onChange={handleInputChange}
                             />
                         </div>
                         <div>
-                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
-                                E-mail
-                            </label>
+                            <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">E-mail</label>
                             <input
                                 id="email"
                                 type="email"
                                 placeholder="E-mail"
                                 className="w-full p-4 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
+                                value={formData.email}
+                                onChange={handleInputChange}
                             />
                         </div>
                         <div>
-                            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="message">
-                                Message
-                            </label>
+                            <label htmlFor="comment" className="block text-gray-700 text-sm font-bold mb-2">Message</label>
                             <textarea
-                                id="message"
+                                id="comment"
                                 placeholder="Message..."
                                 className="w-full p-4 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"
                                 rows="4"
+                                value={formData.comment}
+                                onChange={handleInputChange}
                             ></textarea>
                         </div>
-                        <button
-                            type="submit"
-                            className="w-full bg-black text-white p-4 rounded-lg hover:bg-blue-600"
-                        >
-                            Submit
-                        </button>
+                        <button type="submit" className="w-full bg-black text-white p-4 rounded-lg hover:bg-blue-600">Submit</button>
                     </form>
                 </div>
             </div>
