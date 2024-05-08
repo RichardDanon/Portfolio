@@ -26,7 +26,7 @@ function TestimonialContainer() {
     const fetchTestimonials = async () => {
         setIsLoadingNewTestimonials(true);
         try {
-            const response = await axios.get("https://api-portfolio-l6j5.onrender.com");
+            const response = await axios.get("https://api-portfolio-l6j5.onrender.com/api/v1/services/endorsementService");
             setTestimonials(response.data);
             let indexRandom = Math.floor(Math.random() * response.data.length);
             setTestimonialIndex(indexRandom);
@@ -74,7 +74,7 @@ function TestimonialContainer() {
         }
 
         try {
-            const response = await axios.post('https://api-portfolio-l6j5.onrender.com', formData);
+            const response = await axios.post('https://api-portfolio-l6j5.onrender.com/api/v1/services/endorsementService', formData);
             toast.success("Testimonial submitted successfully!");
             setFormData({ name: '', email: '', comment: '' }); 
         } catch (error) {
