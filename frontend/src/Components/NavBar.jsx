@@ -1,17 +1,27 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import R_Logo from '../Images/R_Logo.png';
+import English from '../Images/English.png';
+import French from '../Images/French.png';
 
 function NavBar() {
   const { t, i18n } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
+  const [language, setLanguage] = useState(i18n.language);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const toggleLangMenu = () => {
+    setIsLangMenuOpen(!isLangMenuOpen);
+  };
+
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
+    setLanguage(lng);
+    setIsLangMenuOpen(false);
   };
 
   return (
@@ -40,19 +50,41 @@ function NavBar() {
           </div>
         </div>
 
-        {/* Language Selector */}
+        {/* Right Section */}
         <div className="flex items-center">
-          <select
-            onChange={(e) => changeLanguage(e.target.value)}
-            className="mx-2 p-2 border rounded bg-white"
-          >
-            <option value="en">
-              <span role="img" aria-label="English">🇬🇧</span> English
-            </option>
-            <option value="fr">
-              <span role="img" aria-label="Français">🇫🇷</span> Français
-            </option>
-          </select>
+          {/* Language Selector */}
+          <div className="relative">
+            <button
+              className="flex items-center border rounded p-2 bg-white"
+              onClick={toggleLangMenu}
+            >
+              {language === 'en' ? (
+                <img src={English} alt="English" style={{ height: '20px', marginRight: '8px' }} />
+              ) : (
+                <img src={French} alt="Français" style={{ height: '20px', marginRight: '8px' }} />
+              )}
+              {language === 'en' ? 'English' : 'Français'}
+            </button>
+
+            {isLangMenuOpen && (
+              <div className="absolute top-12 left-0 bg-white border rounded shadow-md z-20">
+                <button
+                  className="flex items-center p-2 w-full hover:bg-gray-100"
+                  onClick={() => changeLanguage('en')}
+                >
+                  <img src={English} alt="English" style={{ height: '20px', marginRight: '8px' }} />
+                  English
+                </button>
+                <button
+                  className="flex items-center p-2 w-full hover:bg-gray-100"
+                  onClick={() => changeLanguage('fr')}
+                >
+                  <img src={French} alt="Français" style={{ height: '20px', marginRight: '8px' }} />
+                  Français
+                </button>
+              </div>
+            )}
+          </div>
 
           {/* Contact Button - Show this only on larger screens */}
           <a
@@ -61,40 +93,40 @@ function NavBar() {
           >
             {t('navbar.contact')}
           </a>
-        </div>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={toggleMenu}
-          type="button"
-          className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white md:hidden"
-          aria-controls="mobile-menu"
-          aria-expanded={isMenuOpen}
-        >
-          <span className="sr-only">{t('navbar.open_menu')}</span>
-          {/* Icon when menu is closed */}
-          <svg
-            className={`${isMenuOpen ? 'hidden' : 'block'} h-6 w-6`}
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            aria-hidden="true"
+          {/* Mobile Menu Button */}
+          <button
+            onClick={toggleMenu}
+            type="button"
+            className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white md:hidden"
+            aria-controls="mobile-menu"
+            aria-expanded={isMenuOpen}
           >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
-          </svg>
-          {/* Icon when menu is open */}
-          <svg
-            className={`${isMenuOpen ? 'block' : 'hidden'} h-6 w-6`}
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            aria-hidden="true"
-          >
-            <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
+            <span className="sr-only">{t('navbar.open_menu')}</span>
+            {/* Icon when menu is closed */}
+            <svg
+              className={`${isMenuOpen ? 'hidden' : 'block'} h-6 w-6`}
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
+            {/* Icon when menu is open */}
+            <svg
+              className={`${isMenuOpen ? 'block' : 'hidden'} h-6 w-6`}
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        </div>
 
         {/* Mobile Menu */}
         <div
