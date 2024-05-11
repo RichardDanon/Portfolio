@@ -27,7 +27,7 @@ function TestimonialContainer() {
         const intervalId = setInterval(() => {
             fetchTestimonials();
             setTestimonialIndex(prevIndex => (prevIndex + 3) % testimonials.length);
-        }, 5000);
+        }, 10000);
 
         return () => clearInterval(intervalId);
     }, [testimonials.length]);

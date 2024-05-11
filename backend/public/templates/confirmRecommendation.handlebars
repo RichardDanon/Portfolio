@@ -9,82 +9,111 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
+            background-color: #f4f4f9;
         }
 
         .container {
             max-width: 600px;
             margin: 20px auto;
-            background-color: #fff;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            background-color: #007bff;
+            color: #ffffff;
             padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
         }
 
         h1 {
-            text-align: center;
-            margin-bottom: 20px;
+            margin: 0;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .content {
+            padding: 30px;
         }
 
         .endorsement {
-            border-bottom: 1px solid #ddd;
-            padding: 20px 0;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
         }
 
         .endorsement h2 {
             margin-top: 0;
+            font-size: 20px;
+            font-weight: bold;
+            color: #00008B;
             margin-bottom: 10px;
         }
 
         .endorsement p {
             margin: 0;
+            font-size: 16px;
+            color: #333333;
+            line-height: 1.6;
         }
 
         .action-buttons {
             text-align: center;
-            margin-top: 20px;
+            margin-top: 30px;
         }
 
         .approve-btn,
         .reject-btn {
-            padding: 10px 20px;
+            display: inline-block;
+            padding: 12px 30px;
             border: none;
-            border-radius: 5px;
+            border-radius: 25px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            text-decoration: none;
+            font-weight: bold;
+            transition: transform 0.3s ease, background-color 0.3s ease;
         }
 
         .approve-btn {
-            background-color: #4caf50;
-            color: #fff;
+            background-color: #28a745;
+            color: #ffffff;
         }
 
         .reject-btn {
-            background-color: #f44336;
-            color: #fff;
-            margin-left: 10px;
+            background-color: #dc3545;
+            color: #ffffff;
+            margin-left: 20px;
         }
 
         .approve-btn:hover,
         .reject-btn:hover {
-            background-color: #45a049;
+            transform: translateY(-3px);
         }
     </style>
 </head>
 <body>
 <div class="container">
-    <h1>Recommendation Approval</h1>
-
-    <div class="endorsement">
-        <h2>Name: {{name}}</h2>
-        <p>Email: {{email}}</p>
-        <p>Comment: {{comment}}</p>
-        <p>Date: {{date}}</p>
+    <div class="header">
+        <h1>Testimonial Approval</h1>
     </div>
 
-    <div class="action-buttons">
-        <a class="approve-btn" href="{{approveLink}}">Approve</a>
-        <a class="reject-btn" href="{{rejectLink}}">Reject</a>
+    <div class="content">
+        <div class="endorsement">
+            <h2>Name: {{name}}</h2>
+            <p>Email: {{email}}</p>
+            <p>Comment: {{comment}}</p>
+            <p>Date: {{date}}</p>
+        </div>
+
+        <div class="action-buttons">
+            <a class="approve-btn" href="{{approveLink}}">Approve</a>
+            <a class="reject-btn" href="{{rejectLink}}">Reject</a>
+        </div>
     </div>
 </div>
 </body>
