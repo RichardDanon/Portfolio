@@ -1,0 +1,139 @@
+{
+    "more_about_me": "Plus à propos de moi",
+    "discover_more": "Découvrez plus sur mes passe-temps, expériences et aperçus personnels",
+    "experience_section": "Section d'expérience",
+    "skill_section": "Section de compétences",
+    "project_section": "Section de projets",
+    "testimonial_section": "Section de témoignages",
+    "carousel": {
+      "basketball_text": "Je joue au basketball depuis l'âge de 10 ans. Cela m'a appris l'importance du travail d'équipe, de la discipline et de la persévérance.",
+      "basketball_title": "Basketball",
+      "future_plan_text": "Je suis actuellement étudiant en informatique au Collège Champlain et je prévois de poursuivre mes études en génie logiciel à l'Université ÉTS.",
+      "future_plan_title": "Plan futur",
+      "dreams_text": "Passionné par l'espace et l'univers, j'ai toujours été fasciné par les étoiles et les mystères du cosmos. J'aimerais travailler dans un domaine technologique lié à l'espace.",
+      "dreams_title": "Rêves"
+    },
+    "profile": {
+      "name": "Richard Danon-Woedey",
+      "description": "Je suis fier d'être un travailleur acharné qui ne recule jamais devant un défi. Je m'assure de mener à bien chaque tâche que je commence. Cette détermination fait partie intégrante de ma manière de travailler car je ne me laisse pas abattre par les moments difficiles et je vise toujours les meilleurs résultats. De plus, je suis bon en planification. Je peux estimer le temps et les efforts nécessaires pour une tâche, ce qui m'aide à gérer mes ressources efficacement. Cette conscience de moi-même m'aide à terminer les projets rapidement et dans les délais. Je suis également un résolveur de problèmes assez rapide. Je peux repérer les principaux problèmes dans les problèmes complexes et couper à travers la confusion pour arriver au cœur de la question. Mon talent pour aller au cœur d'un problème fait de moi un membre précieux de votre équipe.",
+      "projects_button": "Projets",
+      "download_cv_button": "Télécharger le CV"
+    },
+    "navbar": {
+      "testimonials": "Témoignages",
+      "projects": "Projets",
+      "skills": "Compétences",
+      "experiences": "Expériences",
+      "contact": "Contactez-moi",
+      "open_menu": "Ouvrir le menu principal"
+    },
+    "skills": {
+      "title": "Compétences",
+      "categories": {
+        "software": "Logiciels",
+        "expertise": "Expertise",
+        "language": "Langue"
+      },
+      "software": {
+        "c_": "C#",
+        "java": "Java",
+        "html_css": "HTML & CSS",
+        "sql": "SQL",
+        "mysql": "MySQL",
+        "github": "GitHub",
+        "kotlin": "Kotlin",
+        "swift": "Swift",
+        "php": "PHP",
+        "linux__ubuntu_": "Laravel",
+        "linux": "Linux",
+        "javascript__react_": "JavaScript (React)",
+        "azure__asp_net_core_": "Azure (ASP.NET CORE)", 
+        "unity": "Unity",
+        "python": "Python",
+        "powershell": "PowerShell",
+        "pode_web": "Pode Web",
+        "figma": "Figma"
+      },
+      "expertise": {
+        "project_management": "Gestion de projet",
+        "team_management": "Gestion d'équipe",
+        "time_management": "Gestion du temps",
+        "jira": "JIRA",
+        "power_automate": "Power Automate"
+      },
+      "language": {
+        "french__bilingual_": "Français (Bilingue)",
+        "english__bilingual_": "Anglais (Bilingue)",
+        "ewe__beginner_": "Ewe Débutant"
+      }
+    },
+    "projects": {
+      "title": "Projets",
+      "moving_express": {
+        "name": "MovingExpress",
+        "short_name": "MovingEX",
+        "description": "Application pour aider les clients avec leurs déménagements au niveau national et international (USA). API monolithique avec Spring boot."
+      },
+      "mini_golf_game": {
+        "name": "Mini Golf Game",
+        "short_name": "Golf Game",
+        "description": "Un jeu de mini-golf multijoueur interactif pour tous les âges. Développé avec Unity et C#."
+      },
+      "view_repository": "Voir le dépôt",
+      "visit_website": "Visiter le site"
+    },
+    "experience": {
+      "grenier_art": {
+        "name": "Grenier d’Art Grif&Graf (Temps partiel)",
+        "role": "Magasin de vente au détail d'œuvres d'art et de produits connexes (principalement en bois)",
+        "tasks": {
+          "inventory_management": "Gestion des stocks"
+        }
+      },
+      "wendys": {
+        "name": "Wendy's (Temps partiel)",
+        "role": "Chaîne de restauration rapide",
+        "tasks": {
+          "customer_service": "Service client"
+        }
+      },
+      "opal_rt": {
+        "name": "Opal-RT (Stage)",
+        "role": "Département informatique (Applicatif)",
+        "tasks": {
+          "developing_scripts": "Développement de scripts pour l'automatisation",
+          "flows_management": "Création et gestion de flux avec Power Automate",
+          "documentation": "Documentation des logiciels et des processus"
+        }
+      }
+    },
+    "contact": {
+      "title": "Contactez-moi",
+      "description": "Vous avez un problème technique ? Vous souhaitez envoyer un retour sur une fonctionnalité bêta ? Besoin de détails sur notre plan Business ? Faites-le nous savoir.",
+      "email_label": "Votre email",
+      "email_placeholder": "nom@exemple.com",
+      "subject_label": "Sujet",
+      "subject_placeholder": "Dites-nous comment nous pouvons vous aider",
+      "message_label": "Votre message",
+      "message_placeholder": "Laissez un commentaire...",
+      "send_button": "Envoyer le message",
+      "success": "Email envoyé avec succès !",
+      "error": "Échec de l'envoi de l'email. Veuillez réessayer plus tard.",
+      "copyright": "Tous droits réservés"
+    },
+    "testimonials": {
+      "fetch_error": "Échec de la récupération des témoignages.",
+      "fill_all_fields": "Veuillez remplir tous les champs.",
+      "submit_success": "Témoignage soumis avec succès !",
+      "submit_error": "Échec de la soumission du témoignage.",
+      "reload_button": "Recharger les témoignages",
+      "no_testimonials": "Aucun témoignage disponible.",
+      "name_label": "Nom complet",
+      "name_placeholder": "Nom complet",
+      "email_label": "E-mail",
+      "email_placeholder": "E-mail",
+      "comment_label": "Message",
+      "comment_placeholder": "Message...",
+      "submit_button": "Soumettre"
+    }
+  }

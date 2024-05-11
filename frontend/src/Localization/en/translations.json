@@ -1,0 +1,139 @@
+{
+    "more_about_me": "More About Me",
+    "discover_more": "Discover more about my hobbies, experiences, and personal insights",
+    "experience_section": "Experience Section",
+    "skill_section": "Skill Section",
+    "project_section": "Project Section",
+    "testimonial_section": "Testimonial Section",
+    "carousel": {
+      "basketball_text": "I have been playing basketball since I was 10 years old. It has taught me the importance of teamwork, discipline, and perseverance.",
+      "basketball_title": "Basketball",
+      "future_plan_text": "I am currently studying Computer Science at Champlain College and plan to continue my studies in Software Engineering at ÉTS University.",
+      "future_plan_title": "Future Plan",
+      "dreams_text": "Passionate about space and the universe, I have always been fascinated by the stars and the mysteries of the cosmos. I would love to work in a technological field that is related to space.",
+      "dreams_title": "Dreams"
+    },
+    "profile": {
+      "name": "Richard Danon-Woedey",
+      "description": "I take pride in being a hard worker who never backs down from a challenge. I make sure I see every task I start through to the end. This determination is a big part of how I work because I don't let tough times get me down, and I always aim for the best results. Plus, I'm good at planning. I can figure out how much time and effort a task will need, which helps me manage my resources effectively. This self-awareness helps me finish projects quickly and on schedule. I'm also a pretty quick problem solver. I can spot the main issues in complex problems and cut through the confusion to get to the heart of the matter. My knack for getting to the core of a problem is what makes me a valuable part of your team.",
+      "projects_button": "Projects",
+      "download_cv_button": "Download CV"
+    },
+    "navbar": {
+      "testimonials": "Testimonials",
+      "projects": "Projects",
+      "skills": "Skills",
+      "experiences": "Experiences",
+      "contact": "Contact Me",
+      "open_menu": "Open main menu"
+    },
+    "skills": {
+      "title": "Skills",
+      "categories": {
+        "software": "Software",
+        "expertise": "Expertise",
+        "language": "Language"
+      },
+      "software": {
+        "c_": "C#",
+        "java": "Java",
+        "html_css": "HTML & CSS",
+        "sql": "SQL",
+        "mysql": "MySQL",
+        "github": "GitHub",
+        "kotlin": "Kotlin",
+        "swift": "Swift",
+        "php": "PHP",
+        "laravel": "Laravel",
+        "linux__ubuntu_": "Linux (Ubuntu)",
+        "javascript__react_": "JavaScript (React)",
+        "azure__asp_net_core_": "Azure (ASP.NET CORE)", 
+        "unity": "Unity",
+        "python": "Python",
+        "powershell": "PowerShell",
+        "pode_web": "Pode Web",
+        "figma": "Figma"
+      },
+      "expertise": {
+        "project_management": "Project Management",
+        "team_management": "Team Management",
+        "time_management": "Time Management",
+        "jira": "JIRA",
+        "power_automate": "Power Automate"
+      },
+      "language": {
+        "french__bilingual_": "French (Bilingual)",
+        "english__bilingual_": "English (Bilingual)",
+        "ewe__beginner_": "Ewe (Beginner)"
+      }
+    },
+    "projects": {
+        "title": "Projects",
+        "moving_express": {
+          "name": "MovingExpress",
+          "short_name": "MovingEX",
+          "description": "Application for helping clients with their moves nationally and internationally (USA). Monolithic API with Spring boot."
+        },
+        "mini_golf_game": {
+          "name": "Mini Golf Game",
+          "short_name": "Golf Game",
+          "description": "An interactive multiplayer mini-golf game for all ages. Developed using Unity and C#."
+        },
+        "view_repository": "View Repository",
+        "visit_website": "Visit Website"
+    },
+    "experience": {
+      "grenier_art": {
+        "name": "Grenier d’Art Grif&Graf (Part-time)",
+        "role": "Retail store for artwork and related products (majorly wood)",
+        "tasks": {
+          "inventory_management": "Inventory management"
+        }
+      },
+      "wendys": {
+        "name": "Wendy's (Part-time)",
+        "role": "Fast Food restaurant chain",
+        "tasks": {
+          "customer_service": "Customer Service"
+        }
+      },
+      "opal_rt": {
+        "name": "Opal-RT (Internship)",
+        "role": "IT/Department (Applicative)",
+        "tasks": {
+          "developing_scripts": "Developing scripts for automation",
+          "flows_management": "Creation and Management of Flows with Power Automate",
+          "documentation": "Documentation of software and processes"
+        }
+      }
+    },
+    "contact": {
+      "title": "Contact Me",
+      "description": "Got a technical issue? Want to send feedback about a beta feature? Need details about our Business plan? Let us know.",
+      "email_label": "Your email",
+      "email_placeholder": "name@flowbite.com",
+      "subject_label": "Subject",
+      "subject_placeholder": "Let us know how we can help you",
+      "message_label": "Your message",
+      "message_placeholder": "Leave a comment...",
+      "send_button": "Send message",
+      "success": "Email sent successfully!",
+      "error": "Failed to send email. Please try again later.",
+      "copyright": "All rights reserved"
+    },
+    "testimonials": {
+      "fetch_error": "Failed to fetch testimonials.",
+      "fill_all_fields": "Please fill in all fields.",
+      "submit_success": "Testimonial submitted successfully!",
+      "submit_error": "Failed to submit testimonial.",
+      "reload_button": "Reload Testimonials",
+      "no_testimonials": "No testimonials available.",
+      "name_label": "Full Name",
+      "name_placeholder": "Full Name",
+      "email_label": "E-mail",
+      "email_placeholder": "E-mail",
+      "comment_label": "Message",
+      "comment_placeholder": "Message...",
+      "submit_button": "Submit"
+    }
+  }

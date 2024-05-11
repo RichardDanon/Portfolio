@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import OfficeImage from '../Images/office.jpg';
@@ -10,30 +11,24 @@ import GameDev1 from '../Images/GameDev1.jpg';
 import GameDev2 from '../Images/GameDev2.jpg';
 import GameDev3 from '../Images/GameDev3.jpg';
 
-
-
-
-
-
 const projects = [
   {
-    name: "MovingExpress",
-    description: "Application for helping clients with their moves nationally and internationally (USA). Monolithic API with Spring boot.",
+    name: "moving_express",
+    description: "projects.moving_express.description",
     tags: ["React", "Javascript", "MySQL", "MongoDB", "Spring boot", "Jira", "Auth0", "Docker", "CI/CD"],
     images: [MovingExpress1, MovingExpress2, MovingExpress3, MovingExpress4],
     repoLink: "https://github.com/nic5694/MovingExpress",
+    TrueLink: "https://movingexpress.systems/"
   },
   {
-    name: "Mini Golf Game",
-    description: "An interactive multiplayer mini-golf game for all ages. Developed using Unity and C#.",
-    tags: ["Unity", "C#", "Game Development", "Multiplayer",],
-    images: [GameDev1, GameDev2,GameDev3],
+    name: "mini_golf_game",
+    description: "projects.mini_golf_game.description",
+    tags: ["Unity", "C#", "Game Development", "Multiplayer"],
+    images: [GameDev1, GameDev2, GameDev3],
     repoLink: "https://github.com/RichardDanon/Final_Game_Project",
-  },
-  // Add more projects as needed
+  }
 ];
 
-// Custom Hook to get the current window width
 const useWindowSize = () => {
   const [windowSize, setWindowSize] = useState({
     width: undefined,
@@ -47,29 +42,30 @@ const useWindowSize = () => {
     }
 
     window.addEventListener("resize", handleResize);
-    handleResize(); // Call on mount to get initial size
+    handleResize();
 
     return () => window.removeEventListener("resize", handleResize);
-  }, []); // Empty array ensures effect is only run on mount and unmount
+  }, []);
 
   return windowSize;
 };
 
 const ProjectTab = ({ project, activeProject, setActiveProject }) => {
   const { width } = useWindowSize();
-  
+  const { t } = useTranslation();
+
   const getDisplayName = (projectName) => {
-    if (width < 464) { // For mobile devices
+    if (width < 464) {
       switch (projectName) {
-        case "MovingExpress":
-          return "MovingEX";
-        case "Mini Golf Game":
-          return "Golf Game";
+        case "moving_express":
+          return t('projects.moving_express.short_name');
+        case "mini_golf_game":
+          return t('projects.mini_golf_game.short_name');
         default:
-          return projectName;
+          return t(`projects.${projectName}.name`);
       }
     }
-    return projectName; // Default return for larger devices
+    return t(`projects.${projectName}.name`);
   };
 
   return (
@@ -85,6 +81,7 @@ const ProjectTab = ({ project, activeProject, setActiveProject }) => {
 };
 
 const ProjectSection = () => {
+  const { t } = useTranslation();
   const [activeProject, setActiveProject] = useState(projects[0].name);
   const activeProjectData = projects.find(p => p.name === activeProject);
 
@@ -110,15 +107,22 @@ const ProjectSection = () => {
   return (
     <div className="flex flex-col items-center py-5">
       <div className="w-4/5 bg-white shadow-lg rounded-lg p-5">
-        <h2 className="text-lg md:text-xl font-bold tracking-tight text-gray-800 mb-2">Projects</h2>
+        <h2 className="text-lg md:text-xl font-bold tracking-tight text-gray-800 mb-2">
+          {t('projects.title')}
+        </h2>
         <div className="flex justify-start space-x-2 mb-4 overflow-x-auto">
           {projects.map((project) => (
-            <ProjectTab key={project.name} project={project.name} activeProject={activeProject} setActiveProject={setActiveProject} />
+            <ProjectTab
+              key={project.name}
+              project={project.name}
+              activeProject={activeProject}
+              setActiveProject={setActiveProject}
+            />
           ))}
         </div>
         <Carousel
           responsive={responsive}
-          ssr={true} // Means to render carousel on server-side.
+          ssr={true}
           infinite={true}
           autoPlay={true}
           autoPlaySpeed={3000}
@@ -128,23 +132,30 @@ const ProjectSection = () => {
           dotListClass="custom-dot-list-style"
           itemClass="carousel-item-padding-40-px"
         >
-        {activeProjectData.images.map((image, index) => (
-            <div key={index} className="flex justify-center items-center h-96 sm:h-[400px] md:h-[500px] lg:h-[600px]"> {/* Responsive heights for carousel items */}
-                <img src={image} alt={`${activeProjectData.name} - ${index + 1}`} className="max-w-full h-auto object-contain" />
+          {activeProjectData.images.map((image, index) => (
+            <div key={index} className="flex justify-center items-center h-96 sm:h-[400px] md:h-[500px] lg:h-[600px]">
+              <img src={image} alt={`${t(`projects.${activeProjectData.name}.name`)} - ${index + 1}`} className="max-w-full h-auto object-contain" />
             </div>
-        ))}
+          ))}
         </Carousel>
         <div className="mt-6">
-          <h3 className="text-2xl font-bold">{activeProjectData.name}</h3>
-          <p className="text-gray-600">{activeProjectData.description}</p>
+          <h3 className="text-2xl font-bold">{t(`projects.${activeProjectData.name}.name`)}</h3>
+          <p className="text-gray-600">{t(activeProjectData.description)}</p>
           <div className="mt-4">
             {activeProjectData.tags.map((tag, index) => (
-              <span key={index} className="text-xs font-semibold inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline bg-gray-200 text-gray-700 rounded mr-2">{tag}</span>
+              <span key={index} className="text-xs font-semibold inline-block py-1 px-2.5 leading-none text-center whitespace-nowrap align-baseline bg-gray-200 text-gray-700 rounded mr-2">
+                {tag}
+              </span>
             ))}
           </div>
           <a href={activeProjectData.repoLink} target="_blank" rel="noopener noreferrer" className="inline-block mt-4 px-6 py-2 border border-transparent text-base font-medium rounded-md text-white bg-gray-800 hover:bg-gray-700">
-            View Repository
-          </a>
+            {t('projects.view_repository')}
+          </a> <></>
+          {activeProjectData.TrueLink && (
+            <a href={activeProjectData.TrueLink} target="_blank" rel="noopener noreferrer" className="inline-block mt-4 px-6 py-2 border border-transparent text-base font-medium rounded-md text-white bg-gray-800 hover:bg-gray-700">
+              {t('projects.visit_website')}
+            </a>
+          )}
         </div>
       </div>
     </div>

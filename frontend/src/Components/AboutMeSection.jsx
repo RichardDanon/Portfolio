@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import Basketball from '../Images/BasketBall.jpg';
 import School from '../Images/School.jpg';
 import Space from '../Images/Space.jpg';
-
 
 const responsive = {
   superLargeDesktop: {
@@ -26,6 +26,7 @@ const responsive = {
 };
 
 const AboutMeSection = () => {
+  const { t } = useTranslation();
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -42,20 +43,20 @@ const AboutMeSection = () => {
   const carouselItems = [
     {
       id: 1,
-      text: "I have been playing basketball since I was 10 years old. It has taught me the importance of teamwork, discipline, and perseverance.",
-      title: "Basketball",
+      text: t('carousel.basketball_text'),
+      title: t('carousel.basketball_title'),
       backgroundImg: Basketball,
     },
     {
       id: 2,
-      text: "I am curently studying Computer Science at Champlain College and plan to continue my studies in Software Engineering at ÉTS University. ",
-      title: "Future Plan",
+      text: t('carousel.future_plan_text'),
+      title: t('carousel.future_plan_title'),
       backgroundImg: School, 
     },
     {
       id: 3,
-      text: "Passionate about space and the universe, I have always been fascinated by the stars and the mysteries of the cosmos. I would love to work in a technological field that is related to space.",
-      title: "Dreams",
+      text: t('carousel.dreams_text'),
+      title: t('carousel.dreams_title'),
       backgroundImg: Space,
     }
   ];
@@ -81,9 +82,8 @@ const AboutMeSection = () => {
         itemClass="carousel-item-padding-40-px"
       >
         {carouselItems.map((item) => (
-          <div key={item.id} className="relative" style={{ height: '500px' }}> {/* Custom height for each item */}
+          <div key={item.id} className="relative" style={{ height: '500px' }}>
             <img src={item.backgroundImg} alt={item.title} className="object-cover w-full h-full" />
-            {/* Gradient overlay */}
             <div className={`absolute bottom-0 left-0 w-full ${isMobile ? 'h-2/5' : 'h-2/5'} bg-gradient-to-t from-black to-transparent`}>
               <div className="flex h-full items-end pb-6 px-6">
                 <div>
